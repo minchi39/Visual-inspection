@@ -27,7 +27,9 @@
     canvas.addEventListener('touchstart', startDrawing);
     canvas.addEventListener('touchmove', draw);
     canvas.addEventListener('touchend', stopDrawing);
-
+    
+    displayCoordinates();
+    
     // 設定繪圖參數
     var isDrawing = false;
     var lineCoordinates = [];
