@@ -20,15 +20,10 @@
     var canvas = document.getElementById('drawingCanvas');
     var context = canvas.getContext('2d');
 
-    // 取得顯示座標的元素
-    var coordinatesDiv = document.getElementById('coordinates');
-
     // 設定觸控事件
     canvas.addEventListener('touchstart', startDrawing);
     canvas.addEventListener('touchmove', draw);
     canvas.addEventListener('touchend', stopDrawing);
-    
-    displayCoordinates()
     
     // 設定繪圖參數
     var isDrawing = false;
@@ -74,18 +69,6 @@
     function stopDrawing() {
         isDrawing = false;
         lineCoordinates = []; // 清空軌跡座標陣列，以便下次繪製
-    }
-
-    // 顯示座標 add
-    function displayCoordinates() {
-        var coordinatesHTML = "Coordinates: ";
-        for (var i = 0; i < lineCoordinates.length; i++) {
-            coordinatesHTML += "(" + lineCoordinates[i].x + ", " + lineCoordinates[i].y + ")";
-            if (i < lineCoordinates.length - 1) {
-                coordinatesHTML += ", ";
-            }
-        }
-        coordinatesDiv.innerHTML = coordinatesHTML;
     }
 </script>
 
