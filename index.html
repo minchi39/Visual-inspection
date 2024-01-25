@@ -67,7 +67,23 @@
     // 結束繪圖
     function stopDrawing() {
         isDrawing = false;
+        sendCoordinatesToBackend(lineCoordinates); // 將座標傳送到後端
         lineCoordinates = []; // 清空軌跡座標陣列，以便下次繪製
+    }
+
+
+    function sendCoordinatesToBackend(coordinates) {
+        // 使用 Fetch API 將座標傳送到後端
+        fetch('/your-backend-endpoint', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ coordinates: coordinates }),
+        })
+        .then(response => response.json())
+        .then(data => console.log('Response from backend:', data))
+        .catch(error => console.error('Error sending coordinates to backend:', error));
     }
 </script>
 
