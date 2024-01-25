@@ -69,17 +69,7 @@
         }
     }
 
-    // 顯示座標
-    function displayCoordinates() {
-        var coordinatesHTML = "Coordinates: ";
-        for (var i = 0; i < lineCoordinates.length; i++) {
-            coordinatesHTML += "(" + lineCoordinates[i].x + ", " + lineCoordinates[i].y + ")";
-            if (i < lineCoordinates.length - 1) {
-                coordinatesHTML += ", ";
-            }
-        }
-        coordinatesDiv.innerHTML = coordinatesHTML;
-    }
+    
     
     // 結束繪圖
     function stopDrawing() {
