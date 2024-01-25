@@ -13,7 +13,6 @@
 <body>
 
 <canvas id="drawingCanvas" width="500" height="500"></canvas>
-<div id="coordinates"></div>
 
 <script>
     // 取得 canvas 元素
@@ -24,7 +23,7 @@
     canvas.addEventListener('touchstart', startDrawing);
     canvas.addEventListener('touchmove', draw);
     canvas.addEventListener('touchend', stopDrawing);
-    
+
     // 設定繪圖參數
     var isDrawing = false;
     var lineCoordinates = [];
