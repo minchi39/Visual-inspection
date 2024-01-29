@@ -73,6 +73,23 @@
         isDrawing = false;
         console.log(lineCoordinates);
         displayCoordinates();  // 顯示座標
+
+        // 發送 POST 請求至後端
+        fetch('/save_coordinates', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ coordinates: lineCoordinates }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+        
         lineCoordinates = []; // 清空軌跡座標陣列，以便下次繪製
     }
 
