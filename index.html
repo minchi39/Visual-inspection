@@ -71,6 +71,7 @@
     // 結束繪圖
     function stopDrawing() {
         isDrawing = false;
+        console.log(lineCoordinates);
         displayCoordinates();  // 顯示座標
         lineCoordinates = []; // 清空軌跡座標陣列，以便下次繪製
     }
