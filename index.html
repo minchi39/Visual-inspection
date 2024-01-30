@@ -78,11 +78,11 @@
         fetch('/save_coordinates', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/text',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({ coordinates: lineCoordinates }),
         })
-        .then(response => response.text())
+        .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
         })
